@@ -70,6 +70,7 @@ class FileStorage:
         self.reload()
 
     def get(self, cls, id):
+<<<<<<< HEAD
         """
         Returns the object based on the class name and its ID, or None if not
         found
@@ -91,3 +92,16 @@ class FileStorage:
                     counter += 1
             return counter
         return len(self.__objects)
+=======
+        '''object to get'''
+        if cls and id:
+            takeObj = '{}.{}'.format(cls, id)
+            everyObj = self.all(cls)
+            return everyObj.get(takeObj)
+        else:
+            return None
+
+    def count(self, cls=None):
+        '''class that is (optional)'''
+        return (len(self.all(cls)))
+>>>>>>> 8b61efaa0c70ec54c823e1d8788e80c3cc40f015
